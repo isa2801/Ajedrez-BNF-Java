@@ -164,3 +164,5 @@ public class AnalizadorGramatica {
         }
     }
 }
+
+//NOTA: Algunas funciones de esta clase fueron construías con ayuda de ChatGPT, pero fueron modificadas para adaptarse a la lógica del programa.
