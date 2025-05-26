@@ -4,8 +4,8 @@ package modelo;
  * Clase que representa una jugada en una partida de ajedrez
  */
 public class Jugada {
-    
-    private String notacion;
+    //Almacena la notación de la jugada, por ejemplo "e4", "Nf3", "O-O", etc.
+    private String notacion; 
     
     /**
      * Constructor

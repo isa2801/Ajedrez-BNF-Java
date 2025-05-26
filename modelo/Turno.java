@@ -58,6 +58,7 @@ public class Turno {
     }
     
     @Override
+    //Metodo para representar el turno como una cadena de texto
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(numero).append(". ").append(jugadaBlanca);

@@ -7,9 +7,11 @@ import java.util.regex.Pattern;
  */
 public class ValidadorSAN {
     
-    // Patrones para validar diferentes tipos de jugadas
-    private static final Pattern PATRON_ENROQUE = Pattern.compile("^O-O(-O)?$");
+    // Se definien los patrones para validar diferentes tipos de jugadas
+    private static final Pattern PATRON_ENROQUE = Pattern.compile("^O-O(-O)?$"); //Se usa para validar enroques 
+    // Se usa para validar movimientos de piezas (y las jugada que puede tener como capturas, jaque mate, etc...)
     private static final Pattern PATRON_MOVIMIENTO_PIEZA = Pattern.compile("^[KQRBN][a-h1-8]?[a-h1-8]?x?[a-h][1-8](=[QRBN])?[+#]?$");
+    // Se usa para validar movimientos de peones
     private static final Pattern PATRON_MOVIMIENTO_PEON = Pattern.compile("^([a-h]x)?[a-h][1-8](=[QRBN])?[+#]?$");
     
     /**
@@ -17,6 +19,7 @@ public class ValidadorSAN {
      * @param jugada Notación de la jugada
      * @return true si la jugada es válida, false en caso contrario
      */
+    // Recibe de parametro la jugada, para decir si es valida o no
     public static boolean esJugadaValida(String jugada) {
         // Verificar si es un enroque
         if (PATRON_ENROQUE.matcher(jugada).matches()) {
@@ -42,13 +45,14 @@ public class ValidadorSAN {
      * @return true si la casilla es válida, false en caso contrario
      */
     public static boolean esCasillaValida(String casilla) {
+        // La casilla debe tener exactamente 2 caracteres: una letra (columna) y un número (fila)
         if (casilla.length() != 2) {
             return false;
         }
         
         char columna = casilla.charAt(0);
         char fila = casilla.charAt(1);
-        
+        // Valida si la columna está entre 'a' y 'h' y la fila entre '1' y '8'
         return columna >= 'a' && columna <= 'h' && fila >= '1' && fila <= '8';
     }
     
